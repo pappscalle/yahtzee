@@ -1,10 +1,10 @@
 package com.tastebin;
 
-import com.tastebin.sums.Chance;
-import com.tastebin.sums.Sum;
+import com.tastebin.scores.Chance;
 
 import java.util.Arrays;
 import java.util.List;
+import com.tastebin.scores.Score;
 
 public class Dice {
 
@@ -34,8 +34,8 @@ public class Dice {
         dice.forEach(die -> die.release());
     }
 
-    public int sum(Sum sum) {
-        return sum.sum(this.dice);
+    public int sum(Score sum) {
+        return sum.score(this.dice);
     }
 
     @Override

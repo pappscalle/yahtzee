@@ -1,5 +1,6 @@
 package com.tastebin.sums;
 
+import com.tastebin.scores.Yahtzee;
 import com.tastebin.Die;
 import com.tastebin.TraditionalDie;
 import org.testng.annotations.Test;
@@ -23,7 +24,7 @@ public class YahtzeeShould {
                 new TraditionalDie(5)
         );
 
-        assertEquals(yahtzee.sum(dice), 50);
+        assertEquals(yahtzee.score(dice), 50);
     }
 
     @Test
@@ -37,7 +38,7 @@ public class YahtzeeShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(yahtzee.sum(dice), 0);
+        assertEquals(yahtzee.score(dice), 0);
     }
 
 }

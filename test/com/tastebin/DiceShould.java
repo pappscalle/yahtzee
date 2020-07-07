@@ -1,5 +1,6 @@
 package com.tastebin;
 
+import com.tastebin.scores.Chance;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -16,7 +17,7 @@ public class DiceShould {
             new TraditionalDie(4)
         );
 
-        assertEquals(dice.sum(), 15);
+        assertEquals(dice.sum(new Chance()), 15);
     }
 
 }

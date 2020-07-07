@@ -1,5 +1,6 @@
 package com.tastebin.sums;
 
+import com.tastebin.scores.LargeStraight;
 import com.tastebin.Die;
 import com.tastebin.TraditionalDie;
 import org.testng.annotations.Test;
@@ -8,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
+import com.tastebin.scores.Score;
 
 
 public class LargeStraightShould {
@@ -15,7 +17,7 @@ public class LargeStraightShould {
     @Test
     public void return20WhenThereIsALargeStraight() {
 
-        Sum largeStraight = new LargeStraight();
+        Score largeStraight = new LargeStraight();
 
         List<Die> dice = Arrays.asList(
                 new TraditionalDie(3),
@@ -25,13 +27,13 @@ public class LargeStraightShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(largeStraight.sum(dice), 20);
+        assertEquals(largeStraight.score(dice), 20);
     }
 
     @Test
     public void returnZeroWhenThereIsNoLargeStraight() {
 
-        Sum largeStraight = new LargeStraight();
+        Score largeStraight = new LargeStraight();
 
         List<Die> dice = Arrays.asList(
                 new TraditionalDie(1),
@@ -41,7 +43,7 @@ public class LargeStraightShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(largeStraight.sum(dice), 0);
+        assertEquals(largeStraight.score(dice), 0);
     }
 
 

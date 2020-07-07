@@ -1,4 +1,4 @@
-package com.tastebin.sums;
+package com.tastebin.scores;
 
 import com.tastebin.Die;
 import com.tastebin.utils.OccurrencesOfAKind;
@@ -6,10 +6,10 @@ import com.tastebin.utils.OccurrencesOfAKind;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TwoPairs implements Sum {
+public class TwoPairs implements Score {
 
     @Override
-    public int sum(List<Die> dice) {
+    public int score(List<Die> dice) {
 
         List<Integer> values = dice.stream()
                         .mapToInt(Die::value)

@@ -1,4 +1,4 @@
-package com.tastebin.sums;
+package com.tastebin.scores;
 
 import com.tastebin.Die;
 
@@ -6,10 +6,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SmallStraight implements Sum {
+public class SmallStraight implements Score {
 
     @Override
-    public int sum(List<Die> dice) {
+    public int score(List<Die> dice) {
 
         List<Die> sorted =
                 dice.stream()
