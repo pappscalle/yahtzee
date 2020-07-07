@@ -1,6 +1,11 @@
 package com.tastebin;
 
+import com.tastebin.sums.Aces;
+import com.tastebin.sums.OnePair;
+import com.tastebin.sums.Sixes;
 import com.tastebin.sums.ThreeOfAKind;
+import com.tastebin.sums.Threes;
+import com.tastebin.sums.Yahtzee;
 
 import java.util.Scanner;
 
@@ -24,31 +29,28 @@ public class Main {
 
         dice.roll();
         System.out.println(dice.toString());
-        System.out.println(dice.sum());
+        System.out.println(dice.sum(new Aces()));
 
         dice.hold(3);
         dice.hold(4);
 
         dice.roll();
         System.out.println(dice.toString());
-        System.out.println(dice.sum());
+        System.out.println(dice.sum(new OnePair()));
 
         dice.roll();
         System.out.println(dice.toString());
-        System.out.println(dice.sum());
+        System.out.println(dice.sum(new Sixes()));
 
         dice.roll();
         System.out.println(dice.toString());
-        System.out.println(dice.sum());
+        System.out.println(dice.sum(new Threes()));
 
         dice.releaseAll();
         dice.roll();
         System.out.println(dice.toString());
-        System.out.println(dice.sum());
-
-
-        dice.setSum(new ThreeOfAKind());
-        System.out.println(dice.sum());
+        System.out.println(dice.sum(new ThreeOfAKind()));
+        System.out.println(dice.sum(new Yahtzee()));
 
     }
 }

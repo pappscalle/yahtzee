@@ -9,19 +9,13 @@ import java.util.List;
 public class Dice {
 
     private final List<Die> dice;
-    private Sum sum;
 
     public Dice(Die ... dice) {
         this(Arrays.asList(dice));
     }
 
     public Dice(List<Die> dice) {
-        this(dice, new Chance());
-    }
-
-    public Dice(List<Die> dice, Sum sum) {
         this.dice = dice;
-        this.sum = sum;
     }
 
     public void roll() {
@@ -40,11 +34,7 @@ public class Dice {
         dice.forEach(die -> die.release());
     }
 
-    public void setSum(Sum sum) {
-        this.sum = sum;
-    }
-
-    public int sum() {
+    public int sum(Sum sum) {
         return sum.sum(this.dice);
     }
 
