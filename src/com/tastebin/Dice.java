@@ -19,7 +19,7 @@ public class Dice {
     }
 
     public void roll() {
-       dice.forEach(d -> d.roll());
+       dice.forEach(die -> die.roll());
     }
 
     public void hold(int index) {
