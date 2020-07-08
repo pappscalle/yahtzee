@@ -13,9 +13,19 @@ public class OccurrencesOfAKindShould {
     public void returnTheLargestPair() {
 
         List<Integer> values = Arrays.asList(
-            1, 3, 3, 5, 6
+            1, 3, 3, 5, 6, 5
         );
 
-        assertEquals(new OccurrencesOfAKind(values, 2).value(), 3);
+        assertEquals(new OccurrencesOfAKind(values, 2).value(), 5);
+    }
+    
+    @Test
+    public void returnZeroIfNoPairIsFound() {
+
+        List<Integer> values = Arrays.asList(
+            1, 3, 2, 5, 4, 6
+        );
+
+        assertEquals(new OccurrencesOfAKind(values, 2).value(), 0);
     }
 }

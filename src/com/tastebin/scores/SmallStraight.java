@@ -22,7 +22,7 @@ public class SmallStraight implements Score {
             }
         }
 
-        return  sorted.stream().mapToInt(d -> d.value()).sum();
+        return  sorted.stream().mapToInt(Die::value).sum();
     }
 
 }
