@@ -18,6 +18,9 @@ public class TraditionalDie implements Die {
     }
 
     public TraditionalDie(int sides, int initialValue) {
+        if (initialValue < 1 || initialValue > sides) {
+            throw new IllegalArgumentException();
+        }
         this.sides = sides;
         this.value = initialValue;
     }

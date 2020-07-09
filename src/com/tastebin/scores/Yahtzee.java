@@ -7,7 +7,7 @@ import java.util.List;
 public class Yahtzee implements Score {
 
     @Override
-    public int score(List<Die> dice) {
+    public int sum(List<Die> dice) {
         return isYahtzee(dice) ? 50 : 0;
     }
 

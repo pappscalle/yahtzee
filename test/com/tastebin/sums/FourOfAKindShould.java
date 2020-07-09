@@ -27,7 +27,7 @@ public class FourOfAKindShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(fourOfAKind.score(dice), 16);
+        assertEquals(fourOfAKind.sum(dice), 16);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class FourOfAKindShould {
                 new TraditionalDie(1)
         );
 
-        assertEquals(fourOfAKind.score(dice), 0);
+        assertEquals(fourOfAKind.sum(dice), 0);
     }
 
 }

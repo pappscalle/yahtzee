@@ -27,7 +27,7 @@ public class SmallStraightShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(smallStraight.score(dice), 15);
+        assertEquals(smallStraight.sum(dice), 15);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class SmallStraightShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(smallStraight.score(dice), 0);
+        assertEquals(smallStraight.sum(dice), 0);
     }
 
 

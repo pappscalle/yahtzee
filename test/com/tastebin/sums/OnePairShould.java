@@ -27,7 +27,7 @@ public class OnePairShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(pair.score(dice), 8);
+        assertEquals(pair.sum(dice), 8);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class OnePairShould {
                 new TraditionalDie(5)
         );
 
-        assertEquals(pair.score(dice), 0);
+        assertEquals(pair.sum(dice), 0);
 
 
 

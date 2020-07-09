@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class FourOfAKind implements Score {
 
     @Override
-    public int score(List<Die> dice) {
+    public int sum(List<Die> dice) {
 
         List<Integer> values = dice.stream()
                 .mapToInt(Die::value)

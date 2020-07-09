@@ -22,5 +22,15 @@ public class TraditionalDieShould {
         die.roll();
         assertEquals(die.value(), 4);
     }
+    
+    @Test(expectedExceptions = IllegalArgumentException.class) 
+    public void throwExceptionWhenInitialValueIsLargerThanTheNumberOfSides() {
+        Die die = new TraditionalDie(8);      
+    }
 
+    @Test(expectedExceptions = IllegalArgumentException.class) 
+    public void throwExceptionWhenInitialValueIsLessThanZero() {
+        Die die = new TraditionalDie(-1);      
+    }
+    
 }

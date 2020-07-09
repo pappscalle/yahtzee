@@ -25,7 +25,7 @@ public class ChanceShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(chance.score(dice), 12);
+        assertEquals(chance.sum(dice), 12);
     }
 
 }

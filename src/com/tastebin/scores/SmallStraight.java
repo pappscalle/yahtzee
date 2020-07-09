@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class SmallStraight implements Score {
 
     @Override
-    public int score(List<Die> dice) {
+    public int sum(List<Die> dice) {
 
         List<Die> sorted =
                 dice.stream()

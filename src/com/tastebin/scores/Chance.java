@@ -7,7 +7,7 @@ import java.util.List;
 public class Chance implements Score {
 
     @Override
-    public int score(List<Die> dice) {
+    public int sum(List<Die> dice) {
         return dice.stream().mapToInt(Die::value).sum();
     }
 

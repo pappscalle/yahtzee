@@ -27,7 +27,7 @@ public class LargeStraightShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(largeStraight.score(dice), 20);
+        assertEquals(largeStraight.sum(dice), 20);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class LargeStraightShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(largeStraight.score(dice), 0);
+        assertEquals(largeStraight.sum(dice), 0);
     }
 
 

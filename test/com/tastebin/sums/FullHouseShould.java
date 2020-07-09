@@ -27,7 +27,7 @@ public class FullHouseShould {
                 new TraditionalDie(3)
         );
 
-        assertEquals(fullHouse.score(dice), 18);
+        assertEquals(fullHouse.sum(dice), 18);
     }
 
     @Test
@@ -43,6 +43,6 @@ public class FullHouseShould {
                 new TraditionalDie(3)
         );
 
-        assertEquals(fullHouse.score(dice), 0);
+        assertEquals(fullHouse.sum(dice), 0);
     }
 }

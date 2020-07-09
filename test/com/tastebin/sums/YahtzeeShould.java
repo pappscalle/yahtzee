@@ -24,7 +24,7 @@ public class YahtzeeShould {
                 new TraditionalDie(5)
         );
 
-        assertEquals(yahtzee.score(dice), 50);
+        assertEquals(yahtzee.sum(dice), 50);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class YahtzeeShould {
                 new TraditionalDie(4)
         );
 
-        assertEquals(yahtzee.score(dice), 0);
+        assertEquals(yahtzee.sum(dice), 0);
     }
 
 }
