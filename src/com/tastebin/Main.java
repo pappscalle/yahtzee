@@ -1,5 +1,7 @@
 package com.tastebin;
 
+import com.tastebin.input.ConsoleInput;
+import com.tastebin.input.Input;
 import com.tastebin.scores.Aces;
 import com.tastebin.scores.Chance;
 import com.tastebin.scores.Fives;
@@ -15,8 +17,6 @@ import com.tastebin.scores.Threes;
 import com.tastebin.scores.TwoPairs;
 import com.tastebin.scores.Twos;
 import com.tastebin.scores.Yahtzee;
-
-import java.util.Scanner;
 
 public class Main {
 
@@ -38,6 +38,12 @@ public class Main {
     
     public static void main(String[] args) {
 
+        ConsoleInput input = new ConsoleInput();
+        
+        int numberOfPlayers = input.readInt("Number of players: ");
+        String player1Name = input.readString("Name of player one: ");
+        String player2Name = input.readString("Name of player two: ");
+        
         Dice dice = new Dice(
                 new TraditionalDie(6),
                 new TraditionalDie(5),
