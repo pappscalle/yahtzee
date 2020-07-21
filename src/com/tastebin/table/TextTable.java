@@ -23,26 +23,9 @@ public class TextTable {
     
     private final RowHeaders rowHeaders; 
     private final ColumnHeaders columnHeaders; 
-    private final TableData data; 
-    
-    public TextTable() {
-        this(new RowHeaders(), new ColumnHeaders(), new DefaultTableData());
-    }
-    
-    public TextTable(RowHeaders rowHeaders) {
-        this(rowHeaders, new ColumnHeaders(), new DefaultTableData());
-    }
-
-    public TextTable(ColumnHeaders columnHeaders) {
-        this(new RowHeaders(), columnHeaders, new DefaultTableData());
-    }
-    
-    public TextTable(TableData data) {
-        this(new RowHeaders(), new ColumnHeaders(), data);
-    }
-    
-    
-    public TextTable(RowHeaders rowHeaders, ColumnHeaders columnHeaders, TableData data) {
+    private final DefaultTableData data; 
+      
+    public TextTable(DefaultTableData data, ColumnHeaders columnHeaders, RowHeaders rowHeaders) {
         this.columnHeaders = columnHeaders;
         this.rowHeaders = rowHeaders;
         this.data = data; 
@@ -50,29 +33,15 @@ public class TextTable {
     
     @Override
     public String toString() {
-        return "apa";
+
+        StringBuilder result = new StringBuilder();
+       
+        // THE DATA
+        
+        result.append(data.toString());
+        
+        return result.toString();
     }
     
-//    @Override
-//    public String toString() {
-//
-//        StringBuilder result = new StringBuilder();
-//        
-//        // TOP LINE
-//        
-//        result.append(BORDER_TOP_LEFT);
-//        result.append(BORDER_TOP_RIGHT);
-//        result.append(NEW_LINE);
-//
-//        for (int i=0; i<data.numberOfRows(); i++) {
-//            result.append(BORDER_LEFT);
-//            String s = data.row(i)
-//                            .stream()
-//                            .collect(Collectors.joining("|"));
-//            result.append(s);
-//            result.append(BORDER_RIGHT);
-//            result.append(NEW_LINE);
-//        }
-//    }
-    
+        
 }

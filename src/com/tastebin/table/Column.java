@@ -1,6 +1,6 @@
 package com.tastebin.table;
 
-interface Column {
+public interface Column {
     int width();
     int numberOfRows();
     Cell cell(int row); 

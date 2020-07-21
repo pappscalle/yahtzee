@@ -2,6 +2,7 @@ package com.tastebin;
 
 import com.tastebin.table.DefaultColumn;
 import com.tastebin.input.ConsoleInput;
+import com.tastebin.table.Column;
 import com.tastebin.table.ColumnHeaders;
 import com.tastebin.table.DefaultTableData;
 import com.tastebin.table.RowHeaders;
@@ -53,16 +54,17 @@ public class Main {
 ////        );
 //
 //        scores.print();
-        
-        
+
         System.out.println(
-                new TextTable(
-//                    new RowHeaders("Ettor", "Tvåor", "Treor"), 
-//                    new ColumnHeaders("Calle", "Karin", "Elvira"), 
-                    new DefaultTableData(
-                        new DefaultColumn()
-                    );
-                ).toString()
+            new TextTable(
+                new DefaultTableData(
+                    new DefaultColumn("2", "4", "6"),
+                    new DefaultColumn("3", "6", "9"),
+                    new DefaultColumn("4", "8", "12")    
+                ),                        
+                new ColumnHeaders("Calle", "Karin", "Elvira"), 
+                new RowHeaders("Ettor", "Tvåor", "Treor") 
+            ).toString()
         );
         
 //        

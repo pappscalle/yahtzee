@@ -13,7 +13,7 @@ public class Row {
 
     @Override
     public String toString() {
-        return cells.stream().map(s -> s.toString()).collect(Collectors.joining("|"));
+        return cells.stream().map(cell -> cell.render()).collect(Collectors.joining("|"));
     }
-    
+   
 }

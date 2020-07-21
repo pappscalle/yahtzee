@@ -10,9 +10,11 @@ public class Cell {
         this.width = width;
     }
 
-    @Override
-    public String toString() {
+    public String render() {
         return new LeftPaddedString(value, width).toString();
     }
     
+    public int width() {
+        return width;
+    }
 }
