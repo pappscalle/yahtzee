@@ -11,8 +11,7 @@ public class SmallStraight implements Score {
     @Override
     public int sum(List<Die> dice) {
 
-        List<Die> sorted =
-                dice.stream()
+        List<Die> sorted = dice.stream()
                         .sorted(Comparator.comparingInt(Die::value))
                         .collect(Collectors.toList());
 
