@@ -26,8 +26,6 @@ public class DefaultTableData {
     
     
     private final List<Column> columns;
-    private final int numberOfRows;
-    private final int numberOfColumns;
     
     public DefaultTableData() {
         this(new ArrayList<Column>());
@@ -38,20 +36,22 @@ public class DefaultTableData {
     }
 
     public DefaultTableData(List<Column> columns) {
-        this.columns = columns;
-        this.numberOfColumns = columns.size();
-        this.numberOfRows = columns.size() > 0 ? columns.get(0).numberOfRows() : 0; 
+        this.columns = columns;    
     }   
     
+    private int numberOfRows() {
+        return columns.size() > 0 ? columns.get(0).numberOfRows() : 0; 
+    }
+    
     private Row row(int r) {
-        List<Cell> row = new ArrayList<>();
+        List<DefaultCell> row = new ArrayList<>();
         columns.forEach(column -> row.add(column.cell(r)));
         return new Row(row);
     }
     
     public List<Row> rows() {
         List<Row> rows = new ArrayList<>();
-        for (int i=0; i<numberOfRows; i++) {
+        for (int i=0; i < numberOfRows(); i++) {
             rows.add(row(i));
         }
         return rows;

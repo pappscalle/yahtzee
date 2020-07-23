@@ -33,7 +33,7 @@ public class TextTable {
     
     @Override
     public String toString() {
-
+        
         StringBuilder result = new StringBuilder();
        
         // THE DATA

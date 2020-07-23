@@ -5,9 +5,9 @@ import java.util.stream.Collectors;
 
 public class Row {
 
-    private final List<Cell> cells;
+    private final List<DefaultCell> cells;
     
-    public Row(List<Cell> cells) {
+    public Row(List<DefaultCell> cells) {
         this.cells = cells;
     }
 

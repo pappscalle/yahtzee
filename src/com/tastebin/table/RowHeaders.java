@@ -31,8 +31,8 @@ public class RowHeaders implements Column {
     }
 
     @Override
-    public Cell cell(int row) {
-        return new Cell(headers.get(row), width());
+    public DefaultCell cell(int row) {
+        return new DefaultCell(headers.get(row), width());
     }
     
 }
