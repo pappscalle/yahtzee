@@ -1,5 +1,6 @@
 package com.tastebin.utils;
 
+import se.tastebin.utils.OccurrencesOfAKind;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;

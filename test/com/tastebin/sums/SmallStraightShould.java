@@ -1,15 +1,15 @@
 package com.tastebin.sums;
 
-import com.tastebin.scores.SmallStraight;
-import com.tastebin.Die;
-import com.tastebin.TraditionalDie;
+import se.tastebin.scores.SmallStraight;
+import se.tastebin.Die;
+import se.tastebin.TraditionalDie;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
-import com.tastebin.scores.Score;
+import se.tastebin.scores.Score;
 
 
 public class SmallStraightShould {

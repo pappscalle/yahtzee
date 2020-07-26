@@ -1,15 +1,15 @@
 package com.tastebin.sums;
 
-import com.tastebin.scores.ThreeOfAKind;
-import com.tastebin.Die;
-import com.tastebin.TraditionalDie;
+import se.tastebin.scores.ThreeOfAKind;
+import se.tastebin.Die;
+import se.tastebin.TraditionalDie;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
-import com.tastebin.scores.Score;
+import se.tastebin.scores.Score;
 
 
 public class ThreeOfAKindShould {
