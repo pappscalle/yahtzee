@@ -1,19 +1,7 @@
 package com.tastebin.table;
 
-import java.util.List;
-import java.util.stream.Collectors;
+public interface Row {
 
-public class Row {
-
-    private final List<DefaultCell> cells;
+    String render();
     
-    public Row(List<DefaultCell> cells) {
-        this.cells = cells;
-    }
-
-    @Override
-    public String toString() {
-        return cells.stream().map(cell -> cell.render()).collect(Collectors.joining("|"));
-    }
-   
 }

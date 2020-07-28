@@ -1,5 +1,6 @@
 package com.tastebin.table;
 
+import com.tastebin.utils.ZippedList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,28 +36,36 @@ public class DefaultTableData {
         this(Arrays.asList(columns));
     }
 
-    public DefaultTableData(List<Column> columns) {
-        this.columns = columns;    
+    public DefaultTableData(List<String> headers, Column...columns){
+        this(headers, Arrays.asList(columns));
+    }    
+    
+    public DefaultTableData(List<String> headers, List<Column> columns) {
+        this(new ZippedList<>(columns, headers, (c, h) -> new ColumnWithHeader(c, h)));
     }   
+    
+    public DefaultTableData(List<Column> columns) {
+        this.columns = columns;
+    }  
     
     private int numberOfRows() {
         return columns.size() > 0 ? columns.get(0).numberOfRows() : 0; 
     }
     
-    private Row row(int r) {
+    private RowDefault row(int r) {
         List<DefaultCell> row = new ArrayList<>();
         columns.forEach(column -> row.add(column.cell(r)));
-        return new Row(row);
+        return new RowDefault(row);
     }
     
-    public List<Row> rows() {
-        List<Row> rows = new ArrayList<>();
+    public List<RowDefault> rows() {
+        List<RowDefault> rows = new ArrayList<>();
         for (int i=0; i < numberOfRows(); i++) {
             rows.add(row(i));
         }
         return rows;
     }
-   
+    
     @Override
     public String toString() {
 
@@ -78,9 +87,9 @@ public class DefaultTableData {
         
         // THE DATA
         
-        rows().forEach(row -> {
+        rows().stream().forEach(row -> {
             result.append(BORDER_LEFT);
-            result.append(row.toString()); 
+            result.append(row.render()); 
             result.append(BORDER_RIGHT);
             result.append(NEW_LINE);
             result.append(BORDER_LEFT_CROSS);

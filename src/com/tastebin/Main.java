@@ -8,6 +8,7 @@ import com.tastebin.table.ColumnWithHeader;
 import com.tastebin.table.DefaultTableData;
 import com.tastebin.table.RowHeaders;
 import com.tastebin.table.TextTable;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -59,9 +60,14 @@ public class Main {
         System.out.println(
             new TextTable(
                 new DefaultTableData(
-                    new ColumnWithHeader(new DefaultColumn("2", "4", "6"), "Calle"),
-                    new ColumnWithHeader(new DefaultColumn("3", "6", "9"), "Karin"), 
-                    new ColumnWithHeader(new DefaultColumn("4", "8", "12"), "Elvira")   
+                    Arrays.asList("Calle", "Karin", "Elvira"),
+                    new DefaultColumn("2", "4", "6"),
+                    new DefaultColumn("3", "6", "9"), 
+                    new DefaultColumn("4", "8", "12") 
+                        
+//                    new ColumnWithHeader(new DefaultColumn("2", "4", "6"), "Calle"),
+//                    new ColumnWithHeader(new DefaultColumn("3", "6", "9"), "Karin"), 
+//                    new ColumnWithHeader(new DefaultColumn("4", "8", "12"), "Elvira")   
 //                    new DefaultColumn("","Ettor", "Tvåor", "Femmor"),
 //                    new DefaultColumn("Calle","2", "4", "6"),
 //                    new DefaultColumn("Karin","3", "6", "9"),
