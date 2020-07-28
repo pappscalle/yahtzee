@@ -1,8 +1,8 @@
 package com.tastebin.sums;
 
-import com.tastebin.scores.Yahtzee;
-import com.tastebin.Die;
-import com.tastebin.TraditionalDie;
+import se.tastebin.scores.Yahtzee;
+import se.tastebin.Die;
+import se.tastebin.TraditionalDie;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;

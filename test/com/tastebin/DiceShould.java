@@ -1,6 +1,8 @@
 package com.tastebin;
 
-import com.tastebin.scores.Chance;
+import se.tastebin.TraditionalDie;
+import se.tastebin.Dice;
+import se.tastebin.scores.Chance;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;

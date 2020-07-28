@@ -1,5 +1,7 @@
 package com.tastebin;
 
+import se.tastebin.TraditionalDie;
+import se.tastebin.Die;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
