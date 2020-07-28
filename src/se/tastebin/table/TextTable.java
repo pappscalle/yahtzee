@@ -22,11 +22,9 @@ public class TextTable {
     private final static String PADDING = " ";
     
     private final RowHeaders rowHeaders; 
-    private final ColumnHeaders columnHeaders; 
     private final DefaultTableData data; 
       
-    public TextTable(DefaultTableData data, ColumnHeaders columnHeaders, RowHeaders rowHeaders) {
-        this.columnHeaders = columnHeaders;
+    public TextTable(DefaultTableData data, RowHeaders rowHeaders) {
         this.rowHeaders = rowHeaders;
         this.data = data; 
     }       

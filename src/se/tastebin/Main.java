@@ -2,14 +2,10 @@ package se.tastebin;
 
 import se.tastebin.table.DefaultColumn;
 import se.tastebin.input.ConsoleInput;
-import se.tastebin.table.Column;
-import se.tastebin.table.ColumnHeaders;
-import se.tastebin.table.ColumnWithHeader;
 import se.tastebin.table.DefaultTableData;
 import se.tastebin.table.RowHeaders;
 import se.tastebin.table.TextTable;
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
 
@@ -74,7 +70,6 @@ public class Main {
 //                    new DefaultColumn("Karin","3", "6", "9"),
 //                    new DefaultColumn("Elvira","4", "8", "12")    
                 ),                        
-                new ColumnHeaders("Calle", "Karin", "Elvira"), 
                 new RowHeaders("Ettor", "Tvåor", "Treor") 
             ).toString()
         );
@@ -97,11 +92,7 @@ public class Main {
 //
 //        dice.releaseAll();
 //        dice.roll();
-//        scores.print(dice);
-
-
-        List<String> firstNames = Arrays.asList("Anders", "Petter", "Sven");
-        List<String> familyNames = Arrays.asList("Andersson", "Pettersson", "Svensson");   
+//        scores.print(dice); 
         
     
     }

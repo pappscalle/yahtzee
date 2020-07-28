@@ -1,6 +1,5 @@
 package se.tastebin.table;
 
-import se.tastebin.table.RowDefault;
 import se.tastebin.utils.ZippedList;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -75,10 +74,6 @@ public class DefaultTableData {
         List<Integer> widths = columns.stream().mapToInt(c-> c.width()).boxed().collect(Collectors.toList());
         Line line = new Line(widths);
         
-        columns.forEach(column -> {
-            
-        });
-        
         // TOP LINE
         
         result.append(BORDER_LEFT_CROSS);
@@ -88,7 +83,10 @@ public class DefaultTableData {
         
         // THE DATA
         
-        rows().forEach(row -> {
+        
+        
+        
+        rows().stream().forEach(row -> {
             result.append(BORDER_LEFT);
             result.append(row.render()); 
             result.append(BORDER_RIGHT);
