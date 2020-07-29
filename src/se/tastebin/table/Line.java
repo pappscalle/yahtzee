@@ -18,8 +18,7 @@ public class Line {
         this.widths = widths;
     }
     
-    @Override
-    public String toString() {
+    public String render() {
         return widths.stream().map(w -> "-".repeat(w)).collect(Collectors.joining("+"));
     }
     

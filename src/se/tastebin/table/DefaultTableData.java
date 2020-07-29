@@ -27,6 +27,7 @@ public class DefaultTableData {
     
     
     private final List<Column> columns;
+    private final Column rowHeaders = new DefaultColumn("", "Aces", "Twos", "Threes");
     
     public DefaultTableData() {
         this(new ArrayList<Column>());
@@ -36,12 +37,12 @@ public class DefaultTableData {
         this(Arrays.asList(columns));
     }
 
-    public DefaultTableData(List<String> headers, Column...columns){
-        this(headers, Arrays.asList(columns));
+    public DefaultTableData(List<String> columnHeaders, Column...columns){
+        this(columnHeaders, Arrays.asList(columns));
     }    
     
-    public DefaultTableData(List<String> headers, List<Column> columns) {
-        this(new ZippedList<>(columns, headers, (c, h) -> new ColumnWithHeader(c, h)));
+    public DefaultTableData(List<String> columnHeaders, List<Column> columns) {
+        this(new ZippedList<>(columns, columnHeaders, (column, header) -> new ColumnWithHeader(column, header)));
     }   
     
     public DefaultTableData(List<Column> columns) {
@@ -53,7 +54,8 @@ public class DefaultTableData {
     }
     
     private RowDefault row(int r) {
-        List<DefaultCell> row = new ArrayList<>();
+        List<Cell> row = new ArrayList<>();
+        row.add(rowHeaders.cell(r));
         columns.forEach(column -> row.add(column.cell(r)));
         return new RowDefault(row);
     }
@@ -71,13 +73,15 @@ public class DefaultTableData {
 
         StringBuilder result = new StringBuilder();
 
-        List<Integer> widths = columns.stream().mapToInt(c-> c.width()).boxed().collect(Collectors.toList());
-        Line line = new Line(widths);
+//        List<Integer> widths = columns.stream().mapToInt(c-> c.width()).boxed().collect(Collectors.toList());
+//        Line line = new Line(widths);
         
         // TOP LINE
         
+        Row topRow = rows().stream().findFirst().get();
+        
         result.append(BORDER_LEFT_CROSS);
-        result.append(line.toString()); 
+        result.append(new Line(topRow.widths()).render()); 
         result.append(BORDER_RIGHT_CROSS);
         result.append(NEW_LINE);
         
@@ -92,7 +96,7 @@ public class DefaultTableData {
             result.append(BORDER_RIGHT);
             result.append(NEW_LINE);
             result.append(BORDER_LEFT_CROSS);
-            result.append(line.toString()); 
+            result.append(new Line(row.widths()).render()); 
             result.append(BORDER_RIGHT_CROSS);
             result.append(NEW_LINE);
         });
