@@ -21,11 +21,9 @@ public class TextTable {
     
     private final static String PADDING = " ";
     
-    private final RowHeaders rowHeaders; 
     private final DefaultTableData data; 
       
-    public TextTable(DefaultTableData data, RowHeaders rowHeaders) {
-        this.rowHeaders = rowHeaders;
+    public TextTable(DefaultTableData data) {
         this.data = data; 
     }       
     

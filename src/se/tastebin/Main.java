@@ -1,11 +1,12 @@
 package se.tastebin;
 
+import se.tastebin.table.RowHeaders;
 import se.tastebin.table.DefaultColumn;
 import se.tastebin.input.ConsoleInput;
 import se.tastebin.table.DefaultTableData;
-import se.tastebin.table.RowHeaders;
 import se.tastebin.table.TextTable;
 import java.util.Arrays;
+import se.tastebin.table.ColumnHeaders;
 
 public class Main {
 
@@ -53,15 +54,16 @@ public class Main {
 //
 //        scores.print();
 
-        System.out.println(
-            new TextTable(
+        System.out.println(new TextTable(
                 new DefaultTableData(
-                    Arrays.asList("Calle", "Karin", "Elvira"),
-                    new DefaultColumn("2", "4", "6"),
-                    new DefaultColumn("3", "6", "9"), 
-                    new DefaultColumn("4", "8", "12") 
-
-                        
+                    new ColumnHeaders("Calle", "Karin", "Elvira"),
+                    new RowHeaders("Ettor", "Tvåor", "Femmor"), 
+                    Arrays.asList(    
+                        new DefaultColumn("2", "4", "6"),
+                        new DefaultColumn("3", "6", "9"), 
+                        new DefaultColumn("4", "8", "12") 
+                    )
+   
 //                    new ColumnWithHeader(new DefaultColumn("2", "4", "6"), "Calle"),
 //                    new ColumnWithHeader(new DefaultColumn("3", "6", "9"), "Karin"), 
 //                    new ColumnWithHeader(new DefaultColumn("4", "8", "12"), "Elvira")   
@@ -69,8 +71,7 @@ public class Main {
 //                    new DefaultColumn("Calle","2", "4", "6"),
 //                    new DefaultColumn("Karin","3", "6", "9"),
 //                    new DefaultColumn("Elvira","4", "8", "12")    
-                ),                        
-                new RowHeaders("Ettor", "Tvåor", "Treor") 
+                )                       
             ).toString()
         );
         
