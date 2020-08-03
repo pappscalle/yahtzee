@@ -56,21 +56,13 @@ public class Main {
 
         System.out.println(new TextTable(
                 new DefaultTableData(
-                    new ColumnHeaders("Calle", "Karin", "Elvira"),
                     new RowHeaders("Ettor", "Tvåor", "Femmor"), 
+                    new ColumnHeaders("Calle", "Karin", "Elvira"), 
                     Arrays.asList(    
                         new DefaultColumn("2", "4", "6"),
                         new DefaultColumn("3", "6", "9"), 
                         new DefaultColumn("4", "8", "12") 
                     )
-   
-//                    new ColumnWithHeader(new DefaultColumn("2", "4", "6"), "Calle"),
-//                    new ColumnWithHeader(new DefaultColumn("3", "6", "9"), "Karin"), 
-//                    new ColumnWithHeader(new DefaultColumn("4", "8", "12"), "Elvira")   
-//                    new DefaultColumn("","Ettor", "Tvåor", "Femmor"),
-//                    new DefaultColumn("Calle","2", "4", "6"),
-//                    new DefaultColumn("Karin","3", "6", "9"),
-//                    new DefaultColumn("Elvira","4", "8", "12")    
                 )                       
             ).toString()
         );
