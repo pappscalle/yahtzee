@@ -4,11 +4,11 @@ import se.tastebin.table.cell.Cell;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RowDefault implements Row {
+public class DefaultRow implements Row {
 
     private final List<Cell> cells;
     
-    public RowDefault(List<Cell> cells) {
+    public DefaultRow(List<Cell> cells) {
         this.cells = cells;
     }
 

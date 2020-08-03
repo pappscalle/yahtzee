@@ -5,7 +5,7 @@ import se.tastebin.table.column.ColumnWithHeader;
 import se.tastebin.table.column.Column;
 import se.tastebin.table.row.RowHeaders;
 import se.tastebin.table.column.RowHeaderColumn;
-import se.tastebin.table.row.RowDefault;
+import se.tastebin.table.row.DefaultRow;
 import se.tastebin.table.row.Row;
 import java.util.AbstractList;
 import se.tastebin.utils.ZippedList;
@@ -59,7 +59,7 @@ public class DefaultTableData extends AbstractList<Row>{
     public Row get(int index) {  
         return columns.stream()
                       .map(column -> column.cell(index))
-                      .collect(Collectors.collectingAndThen(Collectors.toList(), RowDefault::new));        
+                      .collect(Collectors.collectingAndThen(Collectors.toList(), DefaultRow::new));        
     }
 
     @Override
