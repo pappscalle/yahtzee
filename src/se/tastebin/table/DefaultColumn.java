@@ -26,7 +26,7 @@ public class DefaultColumn implements Column {
     }
 
     @Override
-    public DefaultCell cell(int row) {
+    public Cell cell(int row) {
         return new DefaultCell(cells.get(row), width());
     }
 }

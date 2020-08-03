@@ -32,9 +32,25 @@ public class TextTable {
         
         StringBuilder result = new StringBuilder();
        
-        // THE DATA
+        Row topRow = data.stream().findFirst().get();
         
-        result.append(data.toString());
+        result.append(BORDER_LEFT_CROSS);
+        result.append(new Line(topRow.widths()).render()); 
+        result.append(BORDER_RIGHT_CROSS);
+        result.append(NEW_LINE);
+        
+        // THE DATA          
+        
+        data.stream().forEach(row -> {
+            result.append(BORDER_LEFT);
+            result.append(row.render()); 
+            result.append(BORDER_RIGHT);
+            result.append(NEW_LINE);
+            result.append(BORDER_LEFT_CROSS);
+            result.append(new Line(row.widths()).render()); 
+            result.append(BORDER_RIGHT_CROSS);
+            result.append(NEW_LINE);
+        });
         
         return result.toString();
     }
