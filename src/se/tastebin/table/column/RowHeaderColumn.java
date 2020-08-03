@@ -1,4 +1,4 @@
-package se.tastebin.table.row;
+package se.tastebin.table.column;
 
 import se.tastebin.table.cell.DefaultCell;
 import java.util.List;

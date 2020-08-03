@@ -4,7 +4,7 @@ import se.tastebin.table.column.ColumnHeaders;
 import se.tastebin.table.column.ColumnWithHeader;
 import se.tastebin.table.column.Column;
 import se.tastebin.table.row.RowHeaders;
-import se.tastebin.table.row.RowHeaderColumn;
+import se.tastebin.table.column.RowHeaderColumn;
 import se.tastebin.table.row.RowDefault;
 import se.tastebin.table.row.Row;
 import java.util.AbstractList;
