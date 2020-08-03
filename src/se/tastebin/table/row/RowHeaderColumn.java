@@ -1,19 +1,12 @@
-package se.tastebin.table;
+package se.tastebin.table.row;
 
+import se.tastebin.table.cell.DefaultCell;
 import java.util.List;
+import se.tastebin.table.column.Column;
 
 public class RowHeaderColumn implements Column {
 
-    private final List<String> headers;
-        
-//    public RowHeaderColumn() {
-//        this(new ArrayList<String>());
-//    }
-//    
-//    public RowHeaderColumn(String...headers) {
-//        this(Arrays.asList(headers));
-//    }
-//    
+    private final List<String> headers; 
     
     public RowHeaderColumn(List<String> headers) {                
         this.headers = headers;

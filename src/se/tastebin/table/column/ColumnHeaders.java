@@ -1,4 +1,4 @@
-package se.tastebin.table;
+package se.tastebin.table.column;
 
 import java.util.AbstractList;
 import java.util.Arrays;

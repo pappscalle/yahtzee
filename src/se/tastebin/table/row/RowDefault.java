@@ -1,5 +1,6 @@
-package se.tastebin.table;
+package se.tastebin.table.row;
 
+import se.tastebin.table.cell.Cell;
 import java.util.List;
 import java.util.stream.Collectors;
 

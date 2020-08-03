@@ -1,4 +1,4 @@
-package se.tastebin.table;
+package se.tastebin.table.row;
 
 import java.util.List;
 

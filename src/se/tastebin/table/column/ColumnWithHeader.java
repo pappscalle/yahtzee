@@ -1,4 +1,6 @@
-package se.tastebin.table;
+package se.tastebin.table.column;
+
+import se.tastebin.table.cell.DefaultCell;
 
 public class ColumnWithHeader implements Column {
 

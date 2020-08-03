@@ -1,5 +1,7 @@
-package se.tastebin.table;
+package se.tastebin.table.column;
 
+import se.tastebin.table.cell.DefaultCell;
+import se.tastebin.table.cell.Cell;
 import java.util.Arrays;
 import java.util.List;
 

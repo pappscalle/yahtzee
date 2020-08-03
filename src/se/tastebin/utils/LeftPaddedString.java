@@ -1,4 +1,4 @@
-package se.tastebin.table;
+package se.tastebin.utils;
 
 public class LeftPaddedString {
 

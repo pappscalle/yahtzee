@@ -1,4 +1,4 @@
-package se.tastebin.table;
+package se.tastebin.table.cell;
 
 public interface Cell {
 

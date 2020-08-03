@@ -1,7 +1,7 @@
 package com.tastebin.table;
 
-import se.tastebin.table.DefaultColumn;
-import se.tastebin.table.Column;
+import se.tastebin.table.column.DefaultColumn;
+import se.tastebin.table.column.Column;
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 

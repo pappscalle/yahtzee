@@ -1,6 +1,7 @@
 package se.tastebin.table;
 
-import java.util.stream.Collectors;
+import se.tastebin.table.row.Line;
+import se.tastebin.table.row.Row;
 
 public class TextTable {
     

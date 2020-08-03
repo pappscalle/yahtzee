@@ -1,12 +1,12 @@
 package se.tastebin;
 
-import se.tastebin.table.RowHeaders;
-import se.tastebin.table.DefaultColumn;
+import se.tastebin.table.row.RowHeaders;
+import se.tastebin.table.column.DefaultColumn;
 import se.tastebin.input.ConsoleInput;
 import se.tastebin.table.DefaultTableData;
 import se.tastebin.table.TextTable;
 import java.util.Arrays;
-import se.tastebin.table.ColumnHeaders;
+import se.tastebin.table.column.ColumnHeaders;
 
 public class Main {
 
