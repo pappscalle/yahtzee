@@ -6,6 +6,7 @@ import se.tastebin.input.ConsoleInput;
 import se.tastebin.table.DefaultTableData;
 import se.tastebin.table.TextTable;
 import java.util.Arrays;
+import se.tastebin.table.border.AnsiAltBorder;
 import se.tastebin.table.column.ColumnHeaders;
 
 public class Main {
@@ -63,7 +64,8 @@ public class Main {
                         new DefaultColumn("3", "6", "9"), 
                         new DefaultColumn("4", "8", "12") 
                     )
-                )                       
+                ),
+                new AnsiAltBorder()
             ).toString()
         );
         

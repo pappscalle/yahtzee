@@ -6,12 +6,12 @@ import java.util.stream.Collectors;
 import se.tastebin.table.border.Border;
 
 
-public class Line {
+public class TopLine {
 
     private final List<Integer> widths;
     private final Border border;    
     
-    public Line(List<Integer> widths, Border border) {
+    public TopLine(List<Integer> widths, Border border) {
         this.widths = widths;
         this.border = border;
     }
@@ -19,7 +19,7 @@ public class Line {
     public String render() {
         return widths.stream()
                 .map(w -> border.horizontalLine().repeat(w))
-                .collect(Collectors.joining(border.middleCross(), border.leftCross(), border.rightCross()));
+                .collect(Collectors.joining(border.topCross(), border.topLeft(), border.topRight()));
     }
     
 }
