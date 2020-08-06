@@ -1,14 +1,16 @@
 package se.tastebin.table;
 
+import java.util.stream.Collectors;
 import se.tastebin.table.border.AsciiBorder;
 import se.tastebin.table.border.Border;
+import se.tastebin.table.row.BottomLine;
 import se.tastebin.table.row.Line;
+import se.tastebin.table.row.DefaultRow;
 import se.tastebin.table.row.Row;
+import se.tastebin.table.row.RowLine;
 import se.tastebin.table.row.TopLine;
 
 public class TextTable {
-    
-
     
     private final DefaultTableData data; 
     private final Border gfx;
@@ -25,29 +27,21 @@ public class TextTable {
     @Override
     public String toString() {
         
-        StringBuilder result = new StringBuilder();
-       
         Row topRow = data.stream().findFirst().get();
         
-        
-        
-        //result.append(gfx.topLeft());
-        result.append(new TopLine(topRow.widths(), gfx).render()); 
-        //result.append(gfx.topRight());
-        result.append(gfx.newLine());
+        String topLine = new TopLine(topRow, gfx).render() + gfx.newLine();
+        String line = new Line(topRow, gfx).render() + gfx.newLine();
+        String bottomLine = new BottomLine(topRow, gfx).render() + gfx.newLine();
         
         // THE DATA          
         
-        data.stream().forEach(row -> {
-            result.append(gfx.left());
-            result.append(row.render()); 
-            result.append(gfx.right());
-            result.append(gfx.newLine());
-            result.append(new Line(row.widths(), gfx).render()); 
-            result.append(gfx.newLine());
-        });
+        String text = data.stream().map(row -> {
+            return new RowLine(row, gfx).render() +
+            gfx.newLine();
+        }).collect(Collectors.joining(line, topLine, bottomLine));
         
-        return result.toString();
+       
+        return text;
     }
     
         

@@ -10,16 +10,18 @@ public class DefaultRow implements Row {
     
     public DefaultRow(List<Cell> cells) {
         this.cells = cells;
-    }
+    }    
 
     @Override
     public String render() {
-        return cells.stream().map(cell -> cell.render()).collect(Collectors.joining("|"));
+        return cells().stream().map(cell -> cell.render()).collect(Collectors.joining("-"));
     }
 
     @Override
-    public List<Integer> widths() {
-        return cells.stream().mapToInt(cell -> cell.width()).boxed().collect(Collectors.toList());
+    public List<Cell> cells() {
+        return cells;
     }
    
+    
+    
 }

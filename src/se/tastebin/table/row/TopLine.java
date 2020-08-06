@@ -1,25 +1,30 @@
-
 package se.tastebin.table.row;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import se.tastebin.table.border.Border;
+import se.tastebin.table.cell.Cell;
 
+public class TopLine implements Row {
 
-public class TopLine {
-
-    private final List<Integer> widths;
+    private final Row row;
     private final Border border;    
     
-    public TopLine(List<Integer> widths, Border border) {
-        this.widths = widths;
+    public TopLine(Row row, Border border) {
+        this.row = row;
         this.border = border;
     }
     
+    @Override
     public String render() {
-        return widths.stream()
-                .map(w -> border.horizontalLine().repeat(w))
+        return row.cells().stream()
+                .map(cell -> border.horizontalLine().repeat(cell.width()))
                 .collect(Collectors.joining(border.topCross(), border.topLeft(), border.topRight()));
+    }
+
+    @Override
+    public List<Cell> cells() {
+        return row.cells();
     }
     
 }

@@ -5,12 +5,12 @@ import java.util.stream.Collectors;
 import se.tastebin.table.border.Border;
 import se.tastebin.table.cell.Cell;
 
-public class Line implements Row {
+public class RowLine implements Row {
 
-    private final Row row;
+    private final DefaultRow row;
     private final Border border;    
     
-    public Line(Row row, Border border) {
+    public RowLine(DefaultRow row, Border border) {
         this.row = row;
         this.border = border;
     }
@@ -18,10 +18,10 @@ public class Line implements Row {
     @Override
     public String render() {
         return row.cells().stream()
-                .map(cell -> border.horizontalLine().repeat(cell.width()))
-                .collect(Collectors.joining(border.middleCross(), border.leftCross(), border.rightCross()));
+                .map(cell -> cell.render())
+                .collect(Collectors.joining(border.verticalLine(), border.left(), border.right()));
     }
-
+    
     @Override
     public List<Cell> cells() {
         return row.cells();

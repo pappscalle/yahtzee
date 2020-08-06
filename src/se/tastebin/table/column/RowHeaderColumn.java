@@ -1,8 +1,9 @@
 package se.tastebin.table.column;
 
-import se.tastebin.table.cell.DefaultCell;
+
 import java.util.List;
-import se.tastebin.table.column.Column;
+import se.tastebin.table.cell.Cell;
+import se.tastebin.table.cell.DefaultCell;
 
 public class RowHeaderColumn implements Column {
 
@@ -23,7 +24,7 @@ public class RowHeaderColumn implements Column {
     }
 
     @Override
-    public DefaultCell cell(int row) {
+    public Cell cell(int row) {
         return new DefaultCell(headers.get(row), width());
     }
     
