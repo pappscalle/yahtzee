@@ -13,9 +13,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import se.tastebin.table.row.Row;
 import se.tastebin.utils.MergedList;
 
-public class DefaultTableData extends AbstractList<DefaultRow>{
+public class DefaultTableData extends AbstractList<Row>{
 
     private final List<Column> columns;
 
@@ -56,7 +57,7 @@ public class DefaultTableData extends AbstractList<DefaultRow>{
     }
 
     @Override
-    public DefaultRow get(int index) {  
+    public Row get(int index) {  
         return columns.stream()
                       .map(column -> column.cell(index))
                       .collect(Collectors.collectingAndThen(Collectors.toList(), DefaultRow::new));        
@@ -65,6 +66,11 @@ public class DefaultTableData extends AbstractList<DefaultRow>{
     @Override
     public int size() {
         return columns.size();
+    }
+
+    @Override
+    public String toString() {
+        return columns.toString();
     }
 
 }

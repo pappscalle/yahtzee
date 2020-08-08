@@ -27,5 +27,11 @@ public class RowHeaderColumn implements Column {
     public Cell cell(int row) {
         return new DefaultCell(headers.get(row), width());
     }
+
+    @Override
+    public String toString() {
+        return headers.toString();
+    }
+    
     
 }

@@ -25,4 +25,11 @@ public class RowHeaders extends AbstractList<String>{
     public int size() {        
         return headers.size();
     }
+
+    @Override
+    public String toString() {
+        return headers.toString();
+    }
+    
+    
 }

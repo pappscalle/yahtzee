@@ -7,10 +7,10 @@ import se.tastebin.table.cell.Cell;
 
 public class RowLine implements Row {
 
-    private final DefaultRow row;
+    private final Row row;
     private final Border border;    
     
-    public RowLine(DefaultRow row, Border border) {
+    public RowLine(Row row, Border border) {
         this.row = row;
         this.border = border;
     }

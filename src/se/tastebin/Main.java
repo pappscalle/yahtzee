@@ -8,6 +8,10 @@ import se.tastebin.table.TextTable;
 import java.util.Arrays;
 import se.tastebin.table.border.AnsiAltBorder;
 import se.tastebin.table.column.ColumnHeaders;
+import se.tastebin.table.column.ColumnWithHeader;
+import se.tastebin.table.column.RowHeaderColumn;
+import se.tastebin.utils.MergedList;
+import se.tastebin.utils.ZippedList;
 
 public class Main {
 
@@ -58,7 +62,7 @@ public class Main {
         System.out.println(new TextTable(
                 new DefaultTableData(
                     new RowHeaders("Ettor", "Tvåor", "Femmor"), 
-                    new ColumnHeaders("Calle", "Karin", "Elvira"), 
+                    //new ColumnHeaders("Calle", "Karin", "Elvira"), 
                     Arrays.asList(    
                         new DefaultColumn("2", "4", "6"),
                         new DefaultColumn("3", "6", "9"), 
@@ -69,6 +73,32 @@ public class Main {
             ).toString()
         );
         
+//        System.out.println(new ZippedList<>(Arrays.asList(    
+//                        new DefaultColumn("2", "4", "6"),
+//                        new DefaultColumn("3", "6", "9"), 
+//                        new DefaultColumn("4", "8", "12") 
+//                    ), new ColumnHeaders("Calle", "Karin", "Elvira"), (column, header) -> new ColumnWithHeader(column, header))  );    
+//        
+//        
+//         System.out.println(new MergedList<>(
+//                new RowHeaderColumn(new RowHeaders("Ettor", "Tvåor", "Femmor")), 
+//                Arrays.asList(    
+//                        new DefaultColumn("2", "4", "6"),
+//                        new DefaultColumn("3", "6", "9"), 
+//                        new DefaultColumn("4", "8", "12") 
+//                    )
+//            ));
+//        
+//         System.out.println(new MergedList<>(
+//                new ColumnWithHeader(new RowHeaderColumn(new RowHeaders("Ettor", "Tvåor", "Femmor")), ""), 
+//                new ZippedList<>(Arrays.asList(    
+//                        new DefaultColumn("2", "4", "6"),
+//                        new DefaultColumn("3", "6", "9"), 
+//                        new DefaultColumn("4", "8", "12") 
+//                    ), new ColumnHeaders("Calle", "Karin", "Elvira"), (column, header) -> new ColumnWithHeader(column, header))    
+//            ));
+//         
+         
 //        
 //        dice.roll();
 //        scores.print(dice);

@@ -6,6 +6,6 @@ import se.tastebin.table.cell.Cell;
 public interface Row {
 
     public String render();
-    List<Cell> cells();
+    public List<Cell> cells();
     
 }

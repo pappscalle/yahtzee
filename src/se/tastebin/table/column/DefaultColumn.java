@@ -31,4 +31,12 @@ public class DefaultColumn implements Column {
     public Cell cell(int row) {
         return new DefaultCell(cells.get(row), width());
     }
+
+    @Override
+    public String toString() {
+        return cells.toString();
+    }
+
+   
+   
 }

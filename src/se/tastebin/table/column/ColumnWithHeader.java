@@ -30,5 +30,11 @@ public class ColumnWithHeader implements Column {
             return new DefaultCell(origin.cell(row - 1).render(), width());
         } 
     }
+
+    @Override
+    public String toString() {
+        return "["+header+"]" + origin.toString();
+    }
+    
     
 }

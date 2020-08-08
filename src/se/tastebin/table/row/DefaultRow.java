@@ -21,7 +21,13 @@ public class DefaultRow implements Row {
     public List<Cell> cells() {
         return cells;
     }
+
+    @Override
+    public String toString() {
+        return cells.toString();
+    }
    
+    
     
     
 }

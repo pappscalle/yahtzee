@@ -21,4 +21,11 @@ public class DefaultCell implements Cell {
     public int width() {
         return width;
     }
+
+    @Override
+    public String toString() {
+        return value;
+    }
+    
+    
 }
