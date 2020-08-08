@@ -65,7 +65,7 @@ public class DefaultTableData extends AbstractList<Row>{
 
     @Override
     public int size() {
-        return columns.size();
+        return columns.stream().findFirst().map(column -> column.numberOfRows()).orElse(0);
     }
 
     @Override
