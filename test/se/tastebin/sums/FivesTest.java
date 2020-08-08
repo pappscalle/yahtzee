@@ -1,4 +1,4 @@
-package com.tastebin.sums;
+package se.tastebin.sums;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

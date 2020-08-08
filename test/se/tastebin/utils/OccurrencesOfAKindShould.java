@@ -1,4 +1,4 @@
-package com.tastebin.utils;
+package se.tastebin.utils;
 
 import se.tastebin.utils.OccurrencesOfAKind;
 import org.testng.annotations.Test;

@@ -1,4 +1,4 @@
-package com.tastebin.sums;
+package se.tastebin.sums;
 
 import se.tastebin.scores.ThreeOfAKind;
 import se.tastebin.Die;

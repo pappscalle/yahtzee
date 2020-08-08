@@ -1,6 +1,6 @@
-package com.tastebin.sums;
+package se.tastebin.sums;
 
-import se.tastebin.scores.FullHouse;
+import se.tastebin.scores.TwoPairs;
 import se.tastebin.Die;
 import se.tastebin.TraditionalDie;
 import org.testng.annotations.Test;
@@ -12,37 +12,37 @@ import static org.testng.Assert.assertEquals;
 import se.tastebin.scores.Score;
 
 
-public class FullHouseShould {
+public class TwoPairsShould {
 
     @Test
-    public void returnTheSumOfFullHouse() {
+    public void returnTheSumOfTheTwoPairs() {
 
-        Score fullHouse = new FullHouse();
+        Score pairs = new TwoPairs();
 
         List<Die> dice = Arrays.asList(
-                new TraditionalDie(4),
+                new TraditionalDie(5),
                 new TraditionalDie(4),
                 new TraditionalDie(4),
                 new TraditionalDie(3),
                 new TraditionalDie(3)
         );
 
-        assertEquals(fullHouse.sum(dice), 18);
+        assertEquals(pairs.sum(dice), 14);
     }
 
     @Test
-    public void returnZeroWhenNoFullHouse() {
+    public void returnZeroWhenNoTwoPairs() {
 
-        Score fullHouse = new FullHouse();
+        Score pairs = new TwoPairs();
 
         List<Die> dice = Arrays.asList(
-                new TraditionalDie(2),
-                new TraditionalDie(4),
+                new TraditionalDie(5),
                 new TraditionalDie(4),
                 new TraditionalDie(3),
-                new TraditionalDie(3)
+                new TraditionalDie(2),
+                new TraditionalDie(1)
         );
 
-        assertEquals(fullHouse.sum(dice), 0);
+        assertEquals(pairs.sum(dice), 0);
     }
 }

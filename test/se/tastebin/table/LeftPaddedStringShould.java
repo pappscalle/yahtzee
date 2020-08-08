@@ -1,4 +1,4 @@
-package com.tastebin.table;
+package se.tastebin.table;
 
 import se.tastebin.utils.LeftPaddedString;
 import static org.testng.Assert.*;

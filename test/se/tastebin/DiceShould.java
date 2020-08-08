@@ -1,4 +1,4 @@
-package com.tastebin;
+package se.tastebin;
 
 import se.tastebin.TraditionalDie;
 import se.tastebin.Dice;
