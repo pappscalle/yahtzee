@@ -1,13 +1,11 @@
 package se.tastebin.table;
 
-import java.util.Iterator;
 import java.util.stream.Collectors;
 import se.tastebin.table.border.AsciiBorder;
 import se.tastebin.table.border.Border;
-import se.tastebin.table.column.Column;
 import se.tastebin.table.row.BottomLine;
 import se.tastebin.table.row.Line;
-import se.tastebin.table.row.DefaultRow;
+import se.tastebin.table.row.EmptyRow;
 import se.tastebin.table.row.Row;
 import se.tastebin.table.row.RowLine;
 import se.tastebin.table.row.TopLine;
@@ -29,7 +27,7 @@ public class TextTable {
     @Override
     public String toString() {
         
-        Row topRow = data.stream().findFirst().get();
+        Row topRow = data.stream().findFirst().orElse(new EmptyRow());
 
         String topLine = new TopLine(topRow, border).render() + border.newLine();
         String line = new Line(topRow, border).render() + border.newLine();
