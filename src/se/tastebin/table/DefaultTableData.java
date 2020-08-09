@@ -1,20 +1,19 @@
 package se.tastebin.table;
 
-import se.tastebin.table.column.ColumnHeaders;
-import se.tastebin.table.column.ColumnWithHeader;
-import se.tastebin.table.column.Column;
-import se.tastebin.table.row.RowHeaders;
-import se.tastebin.table.column.RowHeaderColumn;
-import se.tastebin.table.row.DefaultRow;
-import se.tastebin.table.row.DefaultRow;
 import java.util.AbstractList;
-import se.tastebin.utils.ZippedList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import se.tastebin.table.column.Column;
+import se.tastebin.table.column.ColumnHeaders;
+import se.tastebin.table.column.ColumnWithHeader;
+import se.tastebin.table.column.RowHeaderColumn;
+import se.tastebin.table.row.DefaultRow;
 import se.tastebin.table.row.Row;
+import se.tastebin.table.row.RowHeaders;
 import se.tastebin.utils.MergedList;
+import se.tastebin.utils.ZippedList;
 
 public class DefaultTableData extends AbstractList<Row>{
 
@@ -28,6 +27,10 @@ public class DefaultTableData extends AbstractList<Row>{
         this(Arrays.asList(columns));
     }
     
+    public DefaultTableData(RowHeaders rowHeaders, Column...columns) {
+        this(rowHeaders, Arrays.asList(columns));
+    }
+   
     public DefaultTableData(RowHeaders rowHeaders, List<Column> columns) {
         this(
             new MergedList<>(
@@ -36,12 +39,20 @@ public class DefaultTableData extends AbstractList<Row>{
             )
         );
     }
-        
+   
+    public DefaultTableData(ColumnHeaders columnHeaders, Column...columns) {
+        this(columnHeaders, Arrays.asList(columns));
+    }    
+    
     public DefaultTableData(ColumnHeaders columnHeaders, List<Column> columns) {
         this(
            new ZippedList<>(columns, columnHeaders, (column, header) -> new ColumnWithHeader(column, header))      
         );
     }
+    
+    public DefaultTableData(RowHeaders rowHeaders, ColumnHeaders columnHeaders, Column...columns) {
+        this(rowHeaders, columnHeaders, Arrays.asList(columns));
+    }        
     
     public DefaultTableData(RowHeaders rowHeaders, ColumnHeaders columnHeaders, List<Column> columns) {
         this(

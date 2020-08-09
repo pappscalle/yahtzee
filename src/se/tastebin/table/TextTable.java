@@ -15,15 +15,15 @@ import se.tastebin.table.row.TopLine;
 public class TextTable {
     
     private final DefaultTableData data; 
-    private final Border gfx;
+    private final Border border;
     
     public TextTable(DefaultTableData data) {
         this(data, new AsciiBorder());
     }       
 
-    public TextTable(DefaultTableData data, Border graphics) {
+    public TextTable(DefaultTableData data, Border border) {
         this.data = data;
-        this.gfx = graphics;
+        this.border = border;
     }
             
     @Override
@@ -31,12 +31,12 @@ public class TextTable {
         
         Row topRow = data.stream().findFirst().get();
 
-        String topLine = new TopLine(topRow, gfx).render() + gfx.newLine();
-        String line = new Line(topRow, gfx).render() + gfx.newLine();
-        String bottomLine = new BottomLine(topRow, gfx).render() + gfx.newLine();
+        String topLine = new TopLine(topRow, border).render() + border.newLine();
+        String line = new Line(topRow, border).render() + border.newLine();
+        String bottomLine = new BottomLine(topRow, border).render() + border.newLine();
         
         return data.stream().map(row -> {
-                    return new RowLine(row, gfx).render() + gfx.newLine();
+                    return new RowLine(row, border).render() + border.newLine();
                 }).collect(Collectors.joining(line, topLine, bottomLine));
         
     }
