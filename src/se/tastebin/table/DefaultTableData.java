@@ -4,6 +4,7 @@ import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import se.tastebin.table.column.Column;
 import se.tastebin.table.column.ColumnHeaders;
@@ -84,4 +85,9 @@ public class DefaultTableData extends AbstractList<Row>{
         return columns.toString();
     }
 
+    public void validate() {
+        if (columns.stream().map(column -> column.numberOfRows()).distinct().count() > 1) {
+            throw new IllegalArgumentException("The columns do not have the same number of rows");
+        }
+    }
 }

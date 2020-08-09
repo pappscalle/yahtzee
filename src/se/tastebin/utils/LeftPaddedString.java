@@ -1,13 +1,15 @@
 package se.tastebin.utils;
 
+import java.util.Objects;
+
 public class LeftPaddedString {
 
     private final String str;
     private final int length;
     
     public LeftPaddedString(String str, int length) {
-        this.str = str;
-        this.length = length; 
+        this.str = Objects.requireNonNull(str);
+        this.length = Objects.requireNonNull(length); 
     }
     
     @Override

@@ -27,6 +27,8 @@ public class TextTable {
     @Override
     public String toString() {
         
+        data.validate();
+        
         Row topRow = data.stream().findFirst().orElse(new EmptyRow());
 
         String topLine = new TopLine(topRow, border).render() + border.newLine();

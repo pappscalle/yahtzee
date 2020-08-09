@@ -2,6 +2,7 @@ package se.tastebin.utils;
 
 import java.util.AbstractList;
 import java.util.List;
+import java.util.Objects;
 
 public class MergedList<T> extends AbstractList<T>{
 
@@ -9,8 +10,8 @@ public class MergedList<T> extends AbstractList<T>{
     private final List<T> list;
     
     public MergedList(T value, List<T> list) {
-        this.value = value;
-        this.list = list;
+        this.value = Objects.requireNonNull(value);
+        this.list = Objects.requireNonNull(list);
     }
     
     @Override

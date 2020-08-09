@@ -2,6 +2,7 @@ package se.tastebin.utils;
 
 import java.util.AbstractList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.BiFunction;
 
 public class ZippedList<A, B, T> extends AbstractList<T> {
@@ -11,9 +12,9 @@ public class ZippedList<A, B, T> extends AbstractList<T> {
     private final BiFunction<A, B, T> zipper;
 
     public ZippedList(List<A> first, List<B> second, BiFunction<A, B, T> zipper) {
-        this.first = first;
-        this.second = second;
-        this.zipper = zipper;
+        this.first = Objects.requireNonNull(first);
+        this.second = Objects.requireNonNull(second);
+        this.zipper = Objects.requireNonNull(zipper);
     }
 
     @Override
