@@ -1,8 +1,8 @@
 package se.tastebin.table.row;
 
-import se.tastebin.table.cell.Cell;
 import java.util.List;
 import java.util.stream.Collectors;
+import se.tastebin.table.cell.Cell;
 
 public class DefaultRow implements Row {
 
