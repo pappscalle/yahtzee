@@ -3,6 +3,7 @@ package se.tastebin.utils;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 public class OccurrencesOfAKind {
 
@@ -10,8 +11,8 @@ public class OccurrencesOfAKind {
     private final int number;
 
     public OccurrencesOfAKind(List<Integer> values, int number) {
-        this.values = values;
-        this.number = number;
+        this.values = Objects.requireNonNull(values);
+        this.number = Objects.requireNonNull(number);
     }
     
     public int value() {

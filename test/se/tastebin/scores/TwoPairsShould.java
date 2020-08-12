@@ -1,6 +1,5 @@
-package se.tastebin.sums;
+package se.tastebin.scores;
 
-import se.tastebin.scores.FourOfAKind;
 import se.tastebin.Die;
 import se.tastebin.TraditionalDie;
 import org.testng.annotations.Test;
@@ -9,31 +8,30 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
-import se.tastebin.scores.Score;
 
 
-public class FourOfAKindShould {
+public class TwoPairsShould {
 
     @Test
-    public void returnTheSumOfFourEqualDice() {
+    public void returnTheSumOfTheTwoPairs() {
 
-        Score fourOfAKind = new FourOfAKind();
+        Score score = new TwoPairs();
 
         List<Die> dice = Arrays.asList(
                 new TraditionalDie(5),
                 new TraditionalDie(4),
                 new TraditionalDie(4),
-                new TraditionalDie(4),
-                new TraditionalDie(4)
+                new TraditionalDie(3),
+                new TraditionalDie(3)
         );
 
-        assertEquals(fourOfAKind.sum(dice), 16);
+        assertEquals(score.sum(dice), 14);
     }
 
     @Test
-    public void returnZeroWhenThereAreNoEqualDice() {
+    public void returnZeroWhenNoTwoPairs() {
 
-        Score fourOfAKind = new FourOfAKind();
+        Score score = new TwoPairs();
 
         List<Die> dice = Arrays.asList(
                 new TraditionalDie(5),
@@ -43,7 +41,6 @@ public class FourOfAKindShould {
                 new TraditionalDie(1)
         );
 
-        assertEquals(fourOfAKind.sum(dice), 0);
+        assertEquals(score.sum(dice), 0);
     }
-
 }

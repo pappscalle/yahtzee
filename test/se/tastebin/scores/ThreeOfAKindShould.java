@@ -1,6 +1,5 @@
-package se.tastebin.sums;
+package se.tastebin.scores;
 
-import se.tastebin.scores.Yahtzee;
 import se.tastebin.Die;
 import se.tastebin.TraditionalDie;
 import org.testng.annotations.Test;
@@ -11,34 +10,39 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 
 
-public class YahtzeeShould {
+public class ThreeOfAKindShould {
 
     @Test
-    public void return50WhenAllDiceHaveTheSameValues() {
+    public void returnTheSumOfTheTriple() {
 
-        Yahtzee yahtzee = new Yahtzee();
+        Score score = new ThreeOfAKind();
 
         List<Die> dice = Arrays.asList(
                 new TraditionalDie(5),
-                new TraditionalDie(5),
-                new TraditionalDie(5)
-        );
-
-        assertEquals(yahtzee.sum(dice), 50);
-    }
-
-    @Test
-    public void returnZeroWhenAllNotAllDiceHaveTheSameValues() {
-
-        Yahtzee yahtzee = new Yahtzee();
-
-        List<Die> dice = Arrays.asList(
-                new TraditionalDie(5),
+                new TraditionalDie(4),
+                new TraditionalDie(4),
                 new TraditionalDie(5),
                 new TraditionalDie(4)
         );
 
-        assertEquals(yahtzee.sum(dice), 0);
+        assertEquals(score.sum(dice), 12);
     }
+
+    @Test
+    public void returnZeroWhenThereAreNoEqualDice() {
+
+        Score score = new ThreeOfAKind();
+
+        List<Die> dice = Arrays.asList(
+                new TraditionalDie(5),
+                new TraditionalDie(4),
+                new TraditionalDie(3),
+                new TraditionalDie(5),
+                new TraditionalDie(4)
+        );
+
+        assertEquals(score.sum(dice), 0);
+    }
+
 
 }

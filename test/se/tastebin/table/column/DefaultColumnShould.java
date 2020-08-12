@@ -1,4 +1,4 @@
-package se.tastebin.table;
+package se.tastebin.table.column;
 
 import se.tastebin.table.column.DefaultColumn;
 import se.tastebin.table.column.Column;
