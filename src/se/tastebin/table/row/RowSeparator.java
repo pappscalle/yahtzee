@@ -33,5 +33,10 @@ public class RowSeparator implements Row {
     public List<Cell> cells() {
         return row.cells();
     }
+
+    @Override
+    public int size() {
+        return row.size();
+    }
     
 }

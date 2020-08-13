@@ -15,5 +15,10 @@ public class EmptyRow implements Row {
     public List<Cell> cells() {
         return new ArrayList<>();
     }
+
+    @Override
+    public int size() {
+        return 0;
+    }
     
 }

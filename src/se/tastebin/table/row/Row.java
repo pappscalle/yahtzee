@@ -5,7 +5,8 @@ import se.tastebin.table.cell.Cell;
 
 public interface Row {
 
-    public String render();
-    public List<Cell> cells();
+    String render();
+    int size();
+    List<Cell> cells();
     
 }

@@ -5,8 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
+import se.tastebin.table.column.ColumnHeaders;
 import se.tastebin.table.column.DefaultColumn;
 import se.tastebin.table.row.Row;
+import se.tastebin.table.row.RowHeaders;
 
 public class TableModelShould {
 
@@ -21,6 +23,31 @@ public class TableModelShould {
         
     }
 
+    @Test
+    public void returnTheNumberOfRowsWithColumnHeaders() {
+        List rows = new TableModel(
+                new ColumnHeaders("One", "Two"),
+                new DefaultColumn("1", "2", "3"),
+                new DefaultColumn("4", "5", "6")
+        );
+        
+        assertEquals(rows.size(), 4);
+        
+    }    
+    
+        @Test
+    public void returnTheNumberOfColumnsWithRowHeaders() {
+        List<Row> rows = new TableModel(
+                new RowHeaders("Alpha", "Beta", "Gamma"),
+                new DefaultColumn("1", "2", "3"),
+                new DefaultColumn("4", "5", "6")
+        );
+        
+        Row row = rows.get(0);
+        assertEquals(row.size(), 3);
+        
+    } 
+    
     @Test
     public void haveAllValuesInAnIterator() {
         List data = new TableModel(
@@ -60,6 +87,7 @@ public class TableModelShould {
         assertEquals(data.size(), 3); // should throw an exception
         
     }
+    
     
     
     

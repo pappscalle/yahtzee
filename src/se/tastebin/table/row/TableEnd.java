@@ -33,4 +33,8 @@ public class TableEnd implements Row{
         return row.cells();
     }
     
+    @Override
+    public int size() {
+        return row.size();
+    }
 }

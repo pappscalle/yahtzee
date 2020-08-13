@@ -26,6 +26,11 @@ public class DefaultRow implements Row {
     public String toString() {
         return cells.toString();
     }
+
+    @Override
+    public int size() {
+        return cells.size();
+    }
    
     
     
