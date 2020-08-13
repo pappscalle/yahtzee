@@ -27,7 +27,7 @@ public class TextTable {
     @Override
     public String toString() {
         
-        data.validate();
+        //data.validate();
         
         Row topRow = data.stream().findFirst().orElse(new EmptyRow());
 

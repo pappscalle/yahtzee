@@ -15,7 +15,7 @@ public class ColumnWithHeaderShould {
                             "Header"
                         );
         
-        assertEquals(column.numberOfRows(), 4);
+        assertEquals(column.size(), 4);
     }
     
    @Test

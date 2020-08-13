@@ -70,6 +70,7 @@ public class DefaultTableData extends AbstractList<Row>{
 
     @Override
     public Row get(int index) {  
+        validate();
         return columns.stream()
                       .map(column -> column.cell(index))
                       .collect(Collectors.collectingAndThen(Collectors.toList(), DefaultRow::new));        
@@ -77,7 +78,8 @@ public class DefaultTableData extends AbstractList<Row>{
 
     @Override
     public int size() {
-        return columns.stream().findFirst().map(column -> column.numberOfRows()).orElse(0);
+        validate();
+        return columns.stream().findFirst().map(column -> column.size()).orElse(0);
     }
 
     @Override
@@ -85,8 +87,8 @@ public class DefaultTableData extends AbstractList<Row>{
         return columns.toString();
     }
 
-    public void validate() {
-        if (columns.stream().map(column -> column.numberOfRows()).distinct().count() > 1) {
+    private void validate() {
+        if (columns.stream().map(column -> column.size()).distinct().count() > 1) {
             throw new IllegalArgumentException("The columns do not have the same number of rows");
         }
     }

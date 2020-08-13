@@ -18,8 +18,8 @@ public class ColumnWithHeader implements Column {
     }
 
     @Override
-    public int numberOfRows() {
-        return origin.numberOfRows() + 1;
+    public int size() {
+        return origin.size() + 1;
     }
 
     @Override

@@ -10,7 +10,7 @@ public class DefaultColumnShould {
     @Test
     public void returnTheCorrectNumberOfRows() {
         Column column = new DefaultColumn("Apa", "Bepa", "Cepa");
-        assertEquals(column.numberOfRows(), 3);
+        assertEquals(column.size(), 3);
     }
     
    @Test

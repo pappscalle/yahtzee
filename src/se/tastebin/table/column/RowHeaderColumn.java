@@ -19,7 +19,7 @@ public class RowHeaderColumn implements Column {
     }
     
     @Override
-    public int numberOfRows() {
+    public int size() {
         return headers.size();
     }
 

@@ -4,6 +4,6 @@ import se.tastebin.table.cell.Cell;
 
 public interface Column {
     int width();
-    int numberOfRows();
+    int size();
     Cell cell(int row); 
 }

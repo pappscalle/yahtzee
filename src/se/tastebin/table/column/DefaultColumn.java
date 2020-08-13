@@ -23,7 +23,7 @@ public class DefaultColumn implements Column {
     }
 
     @Override
-    public int numberOfRows() {
+    public int size() {
         return cells.size();
     }
 

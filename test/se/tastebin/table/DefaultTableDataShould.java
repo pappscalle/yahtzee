@@ -39,4 +39,26 @@ public class DefaultTableDataShould {
         
     }
     
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void failWhenIteratingColumnsWithDifferentSizes() {
+        List<Row> data = new DefaultTableData(
+                new DefaultColumn("1", "2", "3"),
+                new DefaultColumn("4", "5")
+        );
+
+        for (Row row : data) {} // iterate the data, should throw an exception
+        
+    }
+    
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void failWhenCheckingTheSizeOnColumnsWithDifferentSizes() {
+        List<Row> data = new DefaultTableData(
+                new DefaultColumn("1", "2", "3"),
+                new DefaultColumn("4", "5")
+        );
+
+        assertEquals(data.size(), 3); // should throw an exception
+        
+    }
+    
 }
