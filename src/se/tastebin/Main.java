@@ -3,7 +3,7 @@ package se.tastebin;
 import se.tastebin.table.row.RowHeaders;
 import se.tastebin.table.column.DefaultColumn;
 import se.tastebin.input.ConsoleInput;
-import se.tastebin.table.DefaultTableData;
+import se.tastebin.table.TableModel;
 import se.tastebin.table.TextTable;
 import se.tastebin.table.border.AnsiAltBorder;
 import se.tastebin.table.column.ColumnHeaders;
@@ -55,7 +55,7 @@ public class Main {
 //        scores.print();
 
         System.out.println(new TextTable(
-                new DefaultTableData(
+                new TableModel(
                     new RowHeaders("Ettor", "Tvåor", "Femmor"), 
                     new ColumnHeaders("Calle", "Karin", "Elvira"), 
                     new DefaultColumn("2", "4", "6"),

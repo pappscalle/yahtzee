@@ -16,23 +16,23 @@ import se.tastebin.table.row.RowHeaders;
 import se.tastebin.utils.MergedList;
 import se.tastebin.utils.ZippedList;
 
-public class DefaultTableData extends AbstractList<Row>{
+public class TableModel extends AbstractList<Row>{
 
     private final List<Column> columns;
 
-    public DefaultTableData() {
+    public TableModel() {
         this(new ArrayList<Column>());
     }
     
-    public DefaultTableData(Column...columns) {
+    public TableModel(Column...columns) {
         this(Arrays.asList(columns));
     }
     
-    public DefaultTableData(RowHeaders rowHeaders, Column...columns) {
+    public TableModel(RowHeaders rowHeaders, Column...columns) {
         this(rowHeaders, Arrays.asList(columns));
     }
    
-    public DefaultTableData(RowHeaders rowHeaders, List<Column> columns) {
+    public TableModel(RowHeaders rowHeaders, List<Column> columns) {
         this(
             new MergedList<>(
                 new RowHeaderColumn(rowHeaders), 
@@ -41,21 +41,21 @@ public class DefaultTableData extends AbstractList<Row>{
         );
     }
    
-    public DefaultTableData(ColumnHeaders columnHeaders, Column...columns) {
+    public TableModel(ColumnHeaders columnHeaders, Column...columns) {
         this(columnHeaders, Arrays.asList(columns));
     }    
     
-    public DefaultTableData(ColumnHeaders columnHeaders, List<Column> columns) {
+    public TableModel(ColumnHeaders columnHeaders, List<Column> columns) {
         this(
            new ZippedList<>(columns, columnHeaders, (column, header) -> new ColumnWithHeader(column, header))      
         );
     }
     
-    public DefaultTableData(RowHeaders rowHeaders, ColumnHeaders columnHeaders, Column...columns) {
+    public TableModel(RowHeaders rowHeaders, ColumnHeaders columnHeaders, Column...columns) {
         this(rowHeaders, columnHeaders, Arrays.asList(columns));
     }        
     
-    public DefaultTableData(RowHeaders rowHeaders, ColumnHeaders columnHeaders, List<Column> columns) {
+    public TableModel(RowHeaders rowHeaders, ColumnHeaders columnHeaders, List<Column> columns) {
         this(
             new MergedList<>(
                 new ColumnWithHeader(new RowHeaderColumn(rowHeaders), ""), 
@@ -64,7 +64,7 @@ public class DefaultTableData extends AbstractList<Row>{
         );
     }   
        
-    public DefaultTableData(List<Column> columns) {
+    public TableModel(List<Column> columns) {
         this.columns = columns;
     }
 

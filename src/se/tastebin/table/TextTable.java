@@ -12,14 +12,14 @@ import se.tastebin.table.row.TopLine;
 
 public class TextTable {
     
-    private final DefaultTableData data; 
+    private final TableModel data; 
     private final Border border;
     
-    public TextTable(DefaultTableData data) {
+    public TextTable(TableModel data) {
         this(data, new AsciiBorder());
     }       
 
-    public TextTable(DefaultTableData data, Border border) {
+    public TextTable(TableModel data, Border border) {
         this.data = data;
         this.border = border;
     }

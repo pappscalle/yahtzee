@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 import se.tastebin.table.column.DefaultColumn;
 import se.tastebin.table.row.Row;
 
-public class DefaultTableDataShould {
+public class TableModelShould {
 
     @Test
     public void returnTheNumberOfRowsInTheColumns() {
-        List rows = new DefaultTableData(
+        List rows = new TableModel(
                 new DefaultColumn("1", "2", "3"),
                 new DefaultColumn("4", "5", "6")
         );
@@ -23,7 +23,7 @@ public class DefaultTableDataShould {
 
     @Test
     public void haveAllValuesInAnIterator() {
-        List data = new DefaultTableData(
+        List data = new TableModel(
                 new DefaultColumn("1", "2", "3"),
                 new DefaultColumn("4", "5", "6")
         );
@@ -41,7 +41,7 @@ public class DefaultTableDataShould {
     
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void failWhenIteratingColumnsWithDifferentSizes() {
-        List<Row> data = new DefaultTableData(
+        List<Row> data = new TableModel(
                 new DefaultColumn("1", "2", "3"),
                 new DefaultColumn("4", "5")
         );
@@ -52,7 +52,7 @@ public class DefaultTableDataShould {
     
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void failWhenCheckingTheSizeOnColumnsWithDifferentSizes() {
-        List<Row> data = new DefaultTableData(
+        List<Row> data = new TableModel(
                 new DefaultColumn("1", "2", "3"),
                 new DefaultColumn("4", "5")
         );
@@ -60,5 +60,7 @@ public class DefaultTableDataShould {
         assertEquals(data.size(), 3); // should throw an exception
         
     }
+    
+    
     
 }
