@@ -5,21 +5,28 @@ import java.util.stream.Collectors;
 import se.tastebin.table.border.Border;
 import se.tastebin.table.cell.Cell;
 
-public class Line implements Row {
+public class RowSeparator implements Row {
 
     private final Row row;
     private final Border border;    
+    private final String newLine;
     
-    public Line(Row row, Border border) {
+    public RowSeparator(Row row, Border border) {
+        this(row, border, System.lineSeparator());
+    }
+    
+    public RowSeparator(Row row, Border border, String newLine) {
         this.row = row;
         this.border = border;
+        this.newLine = newLine;                
     }
+    
     
     @Override
     public String render() {
         return row.cells().stream()
                 .map(cell -> border.horizontalLine().repeat(cell.width()))
-                .collect(Collectors.joining(border.middleCross(), border.leftCross(), border.rightCross()));
+                .collect(Collectors.joining(border.middleCross(), border.leftCross(), border.rightCross())) + newLine;
     }
 
     @Override

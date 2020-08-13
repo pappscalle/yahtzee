@@ -78,11 +78,6 @@ public class AsciiBorder implements Border {
     }
 
     @Override
-    public String newLine() {
-        return System.lineSeparator();
-    }
-
-    @Override
     public String padding() {
         return " ";
     }

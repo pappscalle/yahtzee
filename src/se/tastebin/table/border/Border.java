@@ -32,8 +32,6 @@ public interface Border {
 
     String topRight();
 
-    String newLine();
-
     String padding();
     
 }
