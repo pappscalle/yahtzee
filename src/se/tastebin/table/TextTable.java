@@ -1,15 +1,15 @@
 package se.tastebin.table;
 
 import java.util.stream.Collectors;
-import se.tastebin.table.border.AsciiBorder;
-import se.tastebin.table.border.Border;
-import se.tastebin.table.utils.Renderable;
-import se.tastebin.table.border.TableEnd;
-import se.tastebin.table.border.RowSeparator;
+import se.tastebin.table.render.AsciiBorder;
+import se.tastebin.table.render.Border;
+import se.tastebin.table.render.Renderable;
+import se.tastebin.table.render.TableEnd;
+import se.tastebin.table.render.RowSeparator;
 import se.tastebin.table.row.EmptyRow;
 import se.tastebin.table.row.Row;
-import se.tastebin.table.row.RenderedRow;
-import se.tastebin.table.border.TableStart;
+import se.tastebin.table.render.RenderedRow;
+import se.tastebin.table.render.TableStart;
 
 public class TextTable implements Renderable {
     

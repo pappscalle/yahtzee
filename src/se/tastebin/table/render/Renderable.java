@@ -1,4 +1,4 @@
-package se.tastebin.table.utils;
+package se.tastebin.table.render;
 
 public interface Renderable {
     

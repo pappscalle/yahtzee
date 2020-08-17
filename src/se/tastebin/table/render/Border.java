@@ -1,4 +1,4 @@
-package se.tastebin.table.border;
+package se.tastebin.table.render;
 
 public interface Border {
 
