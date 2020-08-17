@@ -1,4 +1,4 @@
-package se.tastebin.utils;
+package se.tastebin.table.utils;
 
 import java.util.AbstractList;
 import java.util.List;

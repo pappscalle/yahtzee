@@ -63,7 +63,7 @@ public class Main {
                     new DefaultColumn("4", "8", "12") 
                 ),
                 new AnsiAltBorder()
-            ).toString()
+            ).render()
         );    
          
 //        

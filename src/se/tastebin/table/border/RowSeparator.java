@@ -1,12 +1,13 @@
 package se.tastebin.table.border;
 
+import se.tastebin.table.utils.Renderable;
 import java.util.List;
 import java.util.stream.Collectors;
 import se.tastebin.table.border.Border;
 import se.tastebin.table.cell.Cell;
 import se.tastebin.table.row.Row;
 
-public class RowSeparator implements Row {
+public class RowSeparator implements Renderable {
 
     private final Row row;
     private final Border border;    
@@ -22,22 +23,11 @@ public class RowSeparator implements Row {
         this.newLine = newLine;                
     }
     
-    
     @Override
     public String render() {
         return row.cells().stream()
                 .map(cell -> border.horizontalLine().repeat(cell.width()))
                 .collect(Collectors.joining(border.middleCross(), border.leftCross(), border.rightCross())) + newLine;
-    }
-
-    @Override
-    public List<Cell> cells() {
-        return row.cells();
-    }
-
-    @Override
-    public int size() {
-        return row.size();
     }
     
 }

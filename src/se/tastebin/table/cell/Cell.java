@@ -1,8 +1,9 @@
 package se.tastebin.table.cell;
 
-public interface Cell {
+import se.tastebin.table.utils.Renderable;
 
-    String render();
+public interface Cell extends Renderable {
+
     int width();
     
 }

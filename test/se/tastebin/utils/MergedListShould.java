@@ -1,5 +1,6 @@
 package se.tastebin.utils;
 
+import se.tastebin.table.utils.MergedList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;

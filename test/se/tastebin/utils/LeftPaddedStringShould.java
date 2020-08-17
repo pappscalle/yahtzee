@@ -1,6 +1,6 @@
 package se.tastebin.utils;
 
-import se.tastebin.utils.LeftPaddedString;
+import se.tastebin.table.utils.LeftPaddedString;
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 

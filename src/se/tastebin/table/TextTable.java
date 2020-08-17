@@ -3,6 +3,7 @@ package se.tastebin.table;
 import java.util.stream.Collectors;
 import se.tastebin.table.border.AsciiBorder;
 import se.tastebin.table.border.Border;
+import se.tastebin.table.utils.Renderable;
 import se.tastebin.table.border.TableEnd;
 import se.tastebin.table.border.RowSeparator;
 import se.tastebin.table.row.EmptyRow;
@@ -10,7 +11,7 @@ import se.tastebin.table.row.Row;
 import se.tastebin.table.row.RenderedRow;
 import se.tastebin.table.border.TableStart;
 
-public class TextTable {
+public class TextTable implements Renderable {
     
     private final TableModel data; 
     private final Border border;
@@ -25,17 +26,17 @@ public class TextTable {
     }
             
     @Override
-    public String toString() {
+    public String render() {
         
         Row topRow = data.stream().findFirst().orElse(new EmptyRow());
 
-        String tableStart = new TableStart(topRow, border).render();
-        String rowSeparator = new RowSeparator(topRow, border).render();
-        String tableEnd = new TableEnd(topRow, border).render();
+        Renderable tableStart = new TableStart(topRow, border);
+        Renderable rowSeparator = new RowSeparator(topRow, border);
+        Renderable tableEnd = new TableEnd(topRow, border);
         
         return data.stream().map(row -> {
                     return new RenderedRow(row, border).render();
-                }).collect(Collectors.joining(rowSeparator, tableStart, tableEnd));
+                }).collect(Collectors.joining(rowSeparator.render(), tableStart.render(), tableEnd.render()));
         
     }
     

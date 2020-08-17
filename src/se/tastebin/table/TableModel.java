@@ -13,8 +13,8 @@ import se.tastebin.table.column.RowHeaderColumn;
 import se.tastebin.table.row.DefaultRow;
 import se.tastebin.table.row.Row;
 import se.tastebin.table.headers.RowHeaders;
-import se.tastebin.utils.MergedList;
-import se.tastebin.utils.ZippedList;
+import se.tastebin.table.utils.MergedList;
+import se.tastebin.table.utils.ZippedList;
 
 public class TableModel extends AbstractList<Row>{
 

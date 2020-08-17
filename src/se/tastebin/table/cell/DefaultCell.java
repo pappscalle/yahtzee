@@ -1,6 +1,6 @@
 package se.tastebin.table.cell;
 
-import se.tastebin.utils.LeftPaddedString;
+import se.tastebin.table.utils.LeftPaddedString;
 
 public class DefaultCell implements Cell {
     

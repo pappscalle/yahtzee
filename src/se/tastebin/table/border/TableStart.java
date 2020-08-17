@@ -1,12 +1,10 @@
 package se.tastebin.table.border;
 
-import java.util.List;
+import se.tastebin.table.utils.Renderable;
 import java.util.stream.Collectors;
-import se.tastebin.table.border.Border;
-import se.tastebin.table.cell.Cell;
 import se.tastebin.table.row.Row;
 
-public class TableStart implements Row {
+public class TableStart implements Renderable {
 
     private final Row row;
     private final Border border;    
@@ -27,16 +25,6 @@ public class TableStart implements Row {
         return row.cells().stream()
                 .map(cell -> border.horizontalLine().repeat(cell.width()))
                 .collect(Collectors.joining(border.topCross(), border.topLeft(), border.topRight())) + newLine;
-    }
-
-    @Override
-    public List<Cell> cells() {
-        return row.cells();
-    }
-
-    @Override
-    public int size() {
-        return row.size();
     }
     
 }
