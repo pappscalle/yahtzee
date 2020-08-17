@@ -12,10 +12,10 @@ public class DefaultRow implements Row {
         this.cells = cells;
     }    
 
-    @Override
-    public String render() {
-        return cells().stream().map(cell -> cell.render()).collect(Collectors.joining("-"));
-    }
+//    @Override
+//    public String render() {
+//        return cells().stream().map(cell -> cell.render()).collect(Collectors.joining("-"));
+//    }
 
     @Override
     public List<Cell> cells() {
