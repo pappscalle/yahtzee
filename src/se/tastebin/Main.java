@@ -1,12 +1,12 @@
 package se.tastebin;
 
-import se.tastebin.table.row.RowHeaders;
+import se.tastebin.table.headers.RowHeaders;
 import se.tastebin.table.column.DefaultColumn;
 import se.tastebin.input.ConsoleInput;
 import se.tastebin.table.TableModel;
 import se.tastebin.table.TextTable;
 import se.tastebin.table.border.AnsiAltBorder;
-import se.tastebin.table.column.ColumnHeaders;
+import se.tastebin.table.headers.ColumnHeaders;
 
 public class Main {
 

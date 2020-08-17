@@ -1,9 +1,10 @@
-package se.tastebin.table.row;
+package se.tastebin.table.border;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import se.tastebin.table.border.Border;
 import se.tastebin.table.cell.Cell;
+import se.tastebin.table.row.Row;
 
 public class RowSeparator implements Row {
 

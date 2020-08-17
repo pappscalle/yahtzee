@@ -7,12 +7,12 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import se.tastebin.table.column.Column;
-import se.tastebin.table.column.ColumnHeaders;
+import se.tastebin.table.headers.ColumnHeaders;
 import se.tastebin.table.column.ColumnWithHeader;
 import se.tastebin.table.column.RowHeaderColumn;
 import se.tastebin.table.row.DefaultRow;
 import se.tastebin.table.row.Row;
-import se.tastebin.table.row.RowHeaders;
+import se.tastebin.table.headers.RowHeaders;
 import se.tastebin.utils.MergedList;
 import se.tastebin.utils.ZippedList;
 

@@ -3,12 +3,12 @@ package se.tastebin.table;
 import java.util.stream.Collectors;
 import se.tastebin.table.border.AsciiBorder;
 import se.tastebin.table.border.Border;
-import se.tastebin.table.row.TableEnd;
-import se.tastebin.table.row.RowSeparator;
+import se.tastebin.table.border.TableEnd;
+import se.tastebin.table.border.RowSeparator;
 import se.tastebin.table.row.EmptyRow;
 import se.tastebin.table.row.Row;
 import se.tastebin.table.row.RenderedRow;
-import se.tastebin.table.row.TableStart;
+import se.tastebin.table.border.TableStart;
 
 public class TextTable {
     

@@ -5,10 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
-import se.tastebin.table.column.ColumnHeaders;
+import se.tastebin.table.headers.ColumnHeaders;
 import se.tastebin.table.column.DefaultColumn;
 import se.tastebin.table.row.Row;
-import se.tastebin.table.row.RowHeaders;
+import se.tastebin.table.headers.RowHeaders;
 
 public class TableModelShould {
 
@@ -35,7 +35,7 @@ public class TableModelShould {
         
     }    
     
-        @Test
+    @Test
     public void returnTheNumberOfColumnsWithRowHeaders() {
         List<Row> rows = new TableModel(
                 new RowHeaders("Alpha", "Beta", "Gamma"),
@@ -47,6 +47,20 @@ public class TableModelShould {
         assertEquals(row.size(), 3);
         
     } 
+    
+    @Test
+    public void returnTheNumberOfColumnsAndRowsWithBothRowHeadersAndColumnHeaders() {
+        
+        List<Row> rows = new TableModel(
+                new RowHeaders("Alpha", "Beta", "Gamma"),
+                new ColumnHeaders("One", "Two"),
+                new DefaultColumn("1", "2", "3"),
+                new DefaultColumn("4", "5", "6")
+        );
+        
+        assertEquals(rows.size(), 4);
+        assertEquals(rows.get(0).size(), 3);
+    }
     
     @Test
     public void haveAllValuesInAnIterator() {
@@ -63,7 +77,7 @@ public class TableModelShould {
         }
          
         assertEquals(rows.size(), 3);
-        
+
     }
     
     @Test(expectedExceptions = IllegalArgumentException.class)
