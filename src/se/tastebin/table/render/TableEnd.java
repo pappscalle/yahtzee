@@ -1,10 +1,7 @@
 
 package se.tastebin.table.render;
 
-import java.util.List;
 import java.util.stream.Collectors;
-import se.tastebin.table.render.Border;
-import se.tastebin.table.cell.Cell;
 import se.tastebin.table.row.Row;
 
 public class TableEnd implements Renderable {

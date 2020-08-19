@@ -1,7 +1,6 @@
 package se.tastebin.table.row;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import se.tastebin.table.cell.Cell;
 
 public class DefaultRow implements Row {
@@ -11,11 +10,6 @@ public class DefaultRow implements Row {
     public DefaultRow(List<Cell> cells) {
         this.cells = cells;
     }    
-
-//    @Override
-//    public String render() {
-//        return cells().stream().map(cell -> cell.render()).collect(Collectors.joining("-"));
-//    }
 
     @Override
     public List<Cell> cells() {

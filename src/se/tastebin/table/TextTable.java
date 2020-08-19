@@ -30,13 +30,13 @@ public class TextTable implements Renderable {
         
         Row topRow = data.stream().findFirst().orElse(new EmptyRow());
 
-        Renderable tableStart = new TableStart(topRow, border);
-        Renderable rowSeparator = new RowSeparator(topRow, border);
-        Renderable tableEnd = new TableEnd(topRow, border);
+        String tableStart = new TableStart(topRow, border).render();
+        String rowSeparator = new RowSeparator(topRow, border).render();
+        String tableEnd = new TableEnd(topRow, border).render();
         
         return data.stream().map(row -> {
                     return new RenderedRow(row, border).render();
-                }).collect(Collectors.joining(rowSeparator.render(), tableStart.render(), tableEnd.render()));
+                }).collect(Collectors.joining(rowSeparator, tableStart, tableEnd));
         
     }
     

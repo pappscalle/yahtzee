@@ -6,11 +6,6 @@ import se.tastebin.table.cell.Cell;
 
 public class EmptyRow implements Row {
 
-//    @Override
-//    public String render() {
-//        return "";
-//    }
-
     @Override
     public List<Cell> cells() {
         return new ArrayList<>();
