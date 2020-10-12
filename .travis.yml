@@ -3,5 +3,7 @@ jdk:
   - openjdk11
 
 before_install:
-   - echo $(ant -version)
+   - sudo apt-get -qq update
+   - sudo apt-get install ant
    - sudo apt-get install ant-optional
+   - echo $(ant -version)
