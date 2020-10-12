@@ -5,6 +5,4 @@ jdk:
 dist: bionic
 
 before_install:
-   - sudo apt-get -qq update
-   - sudo apt-get install ant
    - echo $(ant -version)
